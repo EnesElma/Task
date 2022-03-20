@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+user.service.url: ${USER_S:localhost:8081}/user/find
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${POSTGRE_DB:localhost:15432}/postgre_db?ssl=false
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
